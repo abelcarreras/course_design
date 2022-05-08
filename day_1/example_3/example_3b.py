@@ -1,5 +1,4 @@
-from linear_algebra import dot_product, modulus, outer_product, trace
-from linear_algebra import rotate_vector_list
+from linear_algebra_b import outer_product, trace, rotate_vector_list
 from plotting import plot_bar_vector, plot_simple_vector
 import numpy as np
 
