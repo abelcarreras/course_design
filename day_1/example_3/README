@@ -1,0 +1,3 @@
+This example illustrates the grouping of functions
+in separated files based on the functionality, modules
+imported and common variables
