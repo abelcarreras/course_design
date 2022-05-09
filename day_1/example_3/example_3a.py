@@ -2,11 +2,10 @@ from linear_algebra_a import dot_product, modulus, outer_product, trace
 from plotting_a import plot_bar_vector, plot_simple_vector
 import numpy as np
 
+
 # dimensions
 dimension = 3
 title_name = 'plot vector'
-
-
 
 vector_1 = [1, 2, 1]
 vector_2 = [1, 2, 3]
