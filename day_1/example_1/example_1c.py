@@ -1,6 +1,7 @@
 # better code format
 from math import sqrt
 
+
 charges = [1.0, 8.0, 1.0]
 positions = [[0.0, 0.0, 0.0],
              [1.0, 1.0, 1.0],
