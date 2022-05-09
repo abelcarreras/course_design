@@ -3,6 +3,7 @@ from tools import get_masses_from_elements, get_center_of_mass
 from file_io import get_data_from_file_1 as get_data_from_file
 from inertia import get_principal_axis_and_moments_of_inertia_1 as get_principal_axis_and_moments_of_inertia
 
+
 # read data from output file
 elements, coordinates = get_data_from_file('output.out')
 masses = get_masses_from_elements(elements)
