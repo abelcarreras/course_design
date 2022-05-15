@@ -1,22 +1,6 @@
 import numpy as np
 
 
-def get_masses_from_elements(elements):
-    """
-    returns a list of atomic masses from a list of atomic elements
-
-    :param elements: list of atomic elements
-    :return: list of atomic masses
-    """
-
-    masses_dict = {'C': 12.0,
-                   'H': 1.0,
-                   'O': 16.0}
-
-    masses = [masses_dict[e.capitalize()] for e in elements]  # list comprehension
-    return masses
-
-
 def get_center_of_mass(coordinates, masses):
     """
     returns center of mass
@@ -33,6 +17,22 @@ def get_center_of_mass(coordinates, masses):
     center_of_mass = np.average(coordinates, axis=0, weights=masses)
 
     return center_of_mass
+
+
+def get_masses_from_elements(elements):
+    """
+    returns a list of atomic masses from a list of atomic elements
+
+    :param elements: list of atomic elements
+    :return: list of atomic masses
+    """
+
+    masses_dict = {'C': 12.0,
+                   'H': 1.0,
+                   'O': 16.0}
+
+    masses = [masses_dict[e.capitalize()] for e in elements]  # list comprehension
+    return masses
 
 
 def rotate_coordinates(coordinates, angle, axis, atoms_list=None, center=(0, 0, 0)):
