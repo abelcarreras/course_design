@@ -4,8 +4,6 @@ import numpy as np
 def dot_product(vector_1, vector_2, dimension):
     my_sum = 0
 
-    # dimension = 4
-
     for i in range(dimension):
         my_sum += vector_1[i] * vector_2[i]
 
