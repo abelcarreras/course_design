@@ -10,10 +10,10 @@ masses = get_masses_from_elements(elements)
 
 # set coordinates respect to the center of mass
 center_of_mass = get_center_of_mass(coordinates, masses)
-cm_coordinates = coordinates - center_of_mass
+cm_vectors = coordinates - center_of_mass
 
 # get the principal axis and moments of inertia
-moments, principal_axis = get_principal_axis_and_moments_of_inertia(cm_coordinates, masses)
+moments, principal_axis = get_principal_axis_and_moments_of_inertia(cm_vectors, masses)
 
 # print results
 print('Eigenvalues: ', moments)

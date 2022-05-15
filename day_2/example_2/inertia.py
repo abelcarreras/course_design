@@ -1,19 +1,19 @@
 import numpy as np
 
 
-def get_principal_axis_and_moments_of_inertia_1(cm_coordinates, masses):
+def get_principal_axis_and_moments_of_inertia_1(cm_vectors, masses):
     """
     Compute the principal axis and moments of inertia
     (very explicit)
 
-    :param cm_coordinates: list of atomic coordinates
+    :param cm_vectors: list of distance vectors of atoms respect center of mass
     :param masses: list of atomic masses
     :return: moments of inertia, principal axis of inertia in rows
     """
 
     # Build inertia tensor
     inertia_tensor = np.zeros((3, 3))
-    for m, c in zip(masses, cm_coordinates):
+    for m, c in zip(masses, cm_vectors):
         inertia_tensor[0, 0] += m * (c[1]**2 + c[2]**2)
         inertia_tensor[1, 1] += m * (c[0]**2 + c[2]**2)
         inertia_tensor[2, 2] += m * (c[0]**2 + c[1]**2)
@@ -34,12 +34,12 @@ def get_principal_axis_and_moments_of_inertia_1(cm_coordinates, masses):
     return moments_of_inertia, axis_of_inertia
 
 
-def get_principal_axis_and_moments_of_inertia_2(cm_coordinates, masses):
+def get_principal_axis_and_moments_of_inertia_2(cm_vectors, masses):
     """
     Compute the principal axis and moments of inertia
     (closer to equation)
 
-    :param cm_coordinates: list of atomic coordinates
+    :param cm_vectors: list of distance vectors of atoms respect center of mass
     :param masses: list of atomic masses
     :return: moments of inertia, principal axis of inertia in rows
     """
@@ -49,7 +49,7 @@ def get_principal_axis_and_moments_of_inertia_2(cm_coordinates, masses):
 
     # Build inertia tensor
     inertia_tensor = np.zeros((3, 3))
-    for m, c in zip(masses, cm_coordinates):
+    for m, c in zip(masses, cm_vectors):
         for i in range(3):
             for j in range(3):
                 inertia_tensor[i, j] += m * (delta(i, j) * np.dot(c, c) - c[i]*c[j])
@@ -63,19 +63,19 @@ def get_principal_axis_and_moments_of_inertia_2(cm_coordinates, masses):
     return moments_of_inertia, axis_of_inertia
 
 
-def get_principal_axis_and_moments_of_inertia_3(cm_coordinates, masses):
+def get_principal_axis_and_moments_of_inertia_3(cm_vectors, masses):
     """
     Compute the principal axis and moments of inertia
     (compact and vectorized)
 
-    :param cm_coordinates: list of atomic coordinates
+    :param cm_vectors: list of distance vectors of atoms respect center of mass
     :param masses: list of atomic masses
     :return: moments of inertia, principal axis of inertia in rows
     """
 
     # Build inertia tensor
     inertia_tensor = np.zeros((3, 3))
-    for m, c in zip(masses, cm_coordinates):
+    for m, c in zip(masses, cm_vectors):
         inertia_tensor += m * (np.identity(3) * np.dot(c, c) - np.outer(c, c))
 
     # Compute eigenvalues and eigenvectors of inertia tensor
