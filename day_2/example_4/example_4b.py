@@ -26,6 +26,6 @@ for i in range(10):
 print('Total :', sum_tot)
 
 # list comprehension
-sum_tot = sum([sum([i ** 2 + j for j in range(5)]) + np.sqrt(i)  for i in range(10)])
+sum_tot = sum([sum([i ** 2 + j for j in range(5)]) + np.sqrt(i) for i in range(10)])
 print('Total :', sum_tot)
 

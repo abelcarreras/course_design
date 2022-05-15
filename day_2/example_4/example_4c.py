@@ -26,12 +26,14 @@ def weird_function(n):
         sum2 = np.sqrt(i)
         yield sum1, sum2
 
-
+# list comprehension simple
 sum_tot = sum([term1 + term2 for term1, term2 in weird_function(10)])
 print('Total :', sum_tot)
 
+# list comprehension multiply
 sum_tot = sum([term1 * term2 for term1, term2 in weird_function(10)])
 print('Total (2):', sum_tot)
 
+# list comprehension restriction
 sum_tot = sum([term1 + term2 for term1, term2 in weird_function(10) if term1 < 50])
 print('Total (3):', sum_tot)
