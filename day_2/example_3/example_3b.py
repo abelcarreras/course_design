@@ -2,6 +2,12 @@ from linear_algebra_a import trace
 from plotting_a import plot_bar_vector, plot_simple_vector
 import numpy as np
 
+# dimensions
+dimension = 3
+title_name = 'plot vector'
+
+print('dimension', dimension)
+print('tile name', title_name)
 
 # build Hamiltonian
 hamiltonian = np.zeros((3, 3))
