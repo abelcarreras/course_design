@@ -1,44 +1,38 @@
-from linear_algebra_b import outer_product, trace, rotate_vector_list
-from plotting import plot_bar_vector, plot_simple_vector
+from linear_algebra_a import trace
+from plotting_a import plot_bar_vector, plot_simple_vector
 import numpy as np
 
 
-# Vector representation of States
-v_states = [[1, 0, 0],
-            [0, 1, 0],
-            [0, 0, 1]]
-
-# v_states = rotate_vector_list(v_states, 0.1, axis=[2, 3, 4])
-
 # build Hamiltonian
-hamiltonian = np.zeros_like(v_states, dtype=float)
+hamiltonian = np.zeros((3, 3))
 
 # self energies
 energies = [1.0, 1.2, 1.1]
-for energy, v_state in zip(energies, v_states):
-    hamiltonian += energy * outer_product(v_state, v_state)
+hamiltonian[0, 0] = energies[0]
+hamiltonian[1, 1] = energies[1]
+hamiltonian[2, 2] = energies[2]
 
 # coupling 1
 coupling_01 = 0.1
-hamiltonian += coupling_01 * outer_product(v_states[0], v_states[1])
+hamiltonian[0, 1] = coupling_01
+hamiltonian[1, 0] = coupling_01
 
 # coupling 2
 coupling_12 = 0.2
-hamiltonian += coupling_12 * outer_product(v_states[1], v_states[2])
+hamiltonian[1, 2] = coupling_12
+hamiltonian[2, 1] = coupling_12
 
-# make hamiltonian symmetric
-hamiltonian = 0.5 * (hamiltonian + hamiltonian.T)
 
 print('\nHamiltonian')
 print(hamiltonian)
-print('\nTrace: ', trace(hamiltonian))
+print('\nTrace: ', trace(hamiltonian, dimension))
 
 eigen_energies = np.linalg.eigvals(hamiltonian)
 print('Eigenvalues: ', eigen_energies)
 
 # plot data
-plot_bar_vector(energies)
-plot_simple_vector(energies).figure()
+plot_bar_vector(energies, title_name)
+plot_simple_vector(energies, title_name)
 
-plot_bar_vector(eigen_energies)
-plot_simple_vector(eigen_energies).show()
+plot_bar_vector(eigen_energies, title_name)
+plot_simple_vector(eigen_energies, title_name)
