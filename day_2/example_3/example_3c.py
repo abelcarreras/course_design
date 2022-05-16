@@ -10,7 +10,7 @@ v_states = [[1, 0, 0],
             [0, 1, 0],
             [0, 0, 1]]
 
-# v_states = rotate_vector_list(v_states, 0.1, axis=[2, 3, 4])
+# v_states = rotate_vector_list(v_states, 0.4, axis=[2, 3, 4])
 
 # build Hamiltonian
 hamiltonian = np.zeros_like(v_states, dtype=float)
@@ -29,7 +29,7 @@ coupling_12 = 0.2
 hamiltonian += coupling_12 * outer_product(v_states[1], v_states[2])
 
 # make hamiltonian symmetric
-hamiltonian = 0.5 * (hamiltonian + hamiltonian.T)
+hamiltonian = hamiltonian + hamiltonian.T - np.diag(np.diag(hamiltonian))
 
 print('\nHamiltonian')
 print(hamiltonian)
