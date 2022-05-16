@@ -1,1 +1,22 @@
 This example shows the use of classes
+
+A
+--
+Simple direct implementation of molecules as a list of atoms
+
+B
+--
+showing the flexibility of objects to implement new method keeping the code clean a readable
+shows limitation of molecule as list
+
+C
+--
+Implementation of proper molecule class
+
+*To show
+---------
+Adding new functionality for:
+- center of mass
+- principal moments of inertia
+- nuclear energy
+- separation in files/ organization of code

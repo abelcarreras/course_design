@@ -3,3 +3,14 @@ of the same functions using different syntax.
 Also the advantages of the use of different files
 to structure the code and  the benefit of a simple
 main scripts.
+
+A
+--
+different interfaces flexible arguments
+docstrings
+functions separated by files by type
+
+B
+--
+parser
+several levels of flexibility

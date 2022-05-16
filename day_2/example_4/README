@@ -1,2 +1,19 @@
 This example shows the use of generators
 to create iterators
+
+A
+--
+naive approach to loop sum, list comprehension acceptable
+
+B
+--
+more complicated, list comprehension difficult
+
+C
+--
+Generation approach
+
+D
+---
+More real example
+generators more meaningful if we can use in multiple different algorithms

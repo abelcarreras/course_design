@@ -1,3 +1,17 @@
 This example illustrates the grouping of functions
 in separated files based on the functionality, modules
 imported and common variables
+
+
+A
+__
+define functions using more than necessary variables
+
+B
+--
+
+C
+--
+use variable scopes to reduce number of variables
+plot functions return plt instead of None
+flexibility in contruction hamiltonian using numpy module
