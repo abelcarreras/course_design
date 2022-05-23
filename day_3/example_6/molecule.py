@@ -1,4 +1,3 @@
-from atom import Atom
 import numpy as np
 
 
