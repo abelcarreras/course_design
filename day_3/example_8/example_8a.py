@@ -40,11 +40,14 @@ class SpinOperator:
         raise Exception('Addition between these objects is not implemented')
 
 
-a = SpinOperator([0, 1, 0])
-b = SpinOperator([1, 0, 0])
+operator_1 = SpinOperator([0, 1, 0])
+operator_2 = SpinOperator([1, 0, 0])
 
-print(a.get_matrix_representation())
-print(b.get_matrix_representation())
+print('Matrix representation')
+print(operator_1.get_matrix_representation())
+print(operator_2.get_matrix_representation())
 
-print(a+b)
+print('Addition')
+operator_3 = operator_1 + operator_2
+print(operator_3)
 

@@ -52,6 +52,9 @@ class SpinOperator:
 
 spin = SpinOperator([0, 1, 0])
 
+print('Matrix representation')
 print(spin.get_matrix_representation())
+
+print('Scale by a number')
 print(3*spin)
 
