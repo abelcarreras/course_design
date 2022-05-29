@@ -23,7 +23,6 @@ class Atom:
 # Instance of an object
 hydrogen = Atom('H', [0, 0, 0])
 oxygen = Atom('O', [1, 0, 0])
-
 hydrogen_2 = Atom('H', [1, 1, 0])
 
 

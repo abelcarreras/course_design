@@ -18,6 +18,7 @@ oxygen = Atom('O', [1, 0, 0])
 
 hydrogen_2 = Atom('H', [1, 1, 0])
 
+print(hydrogen._coordinates)
 
 # create molecule
 water_molecule = [hydrogen, oxygen, hydrogen_2]
