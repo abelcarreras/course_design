@@ -36,6 +36,6 @@ core = CoreProgram(symbols, coordinates)
 if args.p is not None:
     result = core.print_molecule_info(args.p, spaces=args.spaces)
 
-if args.version:
+if args.version is True:
     from main import __version__
     print(__version__)

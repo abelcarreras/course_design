@@ -8,7 +8,6 @@ class CustomError(Exception):
         return 'Custom Error : {}'.format(self.message)
 
 
-
 def my_function(num):
     for i in range(num):
         if i > 5:

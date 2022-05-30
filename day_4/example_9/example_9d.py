@@ -23,6 +23,7 @@ class PlotData:
         items_dict = {'title': self.title, 'x_data': self.x_data, 'y_data_array': self.y_data_array}
         return (items_dict[item] for item in items_dict)
 
+
 my_data = PlotData(title='plot_title',
                    x_data=[0, 1, 2, 3, 4, 5, 6],
                    y_data_array=np.array([[3.1, 3.5, 4.3, 5.1, 5.0, 4.9, 3.7],
